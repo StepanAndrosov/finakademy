@@ -1,11 +1,9 @@
-import { connect } from "react-redux"
-import { PartnersCard } from "./PartnersCard/PartnersCard"
+import {connect} from "react-redux"
+import {PartnersCard} from "./PartnersCard/PartnersCard"
 import style from './Partners.module.scss'
 
-
-const Partners = ({ language, partners }) => {
-    let title
-    language === 'ru' ? title = 'Наши партнеры' : title = 'Our partners'
+const Partners = ({language, partners}) => {
+    const title = language === 'ru' ? 'Наши партнеры' : 'Our partners'
 
     return (
         <div className={style.Partners + " card mt-2"}>
@@ -14,7 +12,7 @@ const Partners = ({ language, partners }) => {
                 {partners.map((item, index) => {
                     return (
                         <div key={item.name} className="col-sm-4 pt-3">
-                            <PartnersCard partners={partners[index]} />
+                            <PartnersCard partners={partners[index]}/>
                         </div>)
                 })}
             </div>
@@ -22,10 +20,10 @@ const Partners = ({ language, partners }) => {
     )
 }
 
-function mapstateToProps(state) {
+function mapStateToProps(state) {
     return {
         language: state.language
     }
 }
 
-export default connect(mapstateToProps)(Partners)
+export default connect(mapStateToProps)(Partners)

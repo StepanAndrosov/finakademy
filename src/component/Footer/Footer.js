@@ -1,14 +1,14 @@
 import style from "./Footer.module.scss"
-import { SocialMedia } from "./SocialMedia/SocialMedia"
+import {SocialMedia} from "./SocialMedia/SocialMedia"
 
-export const Footer = ({ footer }) => {
+export const Footer = ({footer}) => {
 
     return (
         <div className={style.Footer + " bg-secondary container-fluid"}>
             <ul className="list-group">
                 <div>
                     <li>
-                        <SocialMedia socialMedia={footer[0].social_media} />
+                        <SocialMedia socialMedia={footer[0].social_media}/>
                     </li>
                 </div>
                 <div>

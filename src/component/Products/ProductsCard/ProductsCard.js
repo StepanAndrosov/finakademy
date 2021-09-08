@@ -1,5 +1,4 @@
-
-export const ProductsCard = ({ products }) => {
+export const ProductsCard = ({products}) => {
 
     return (
         <div className="card mb-2">

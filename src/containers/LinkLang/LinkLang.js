@@ -1,5 +1,5 @@
-import { Component, createRef } from "react"
-import { connect } from "react-redux"
+import {Component, createRef} from "react"
+import {connect} from "react-redux"
 
 class LinkLang extends Component {
 
@@ -29,7 +29,7 @@ class LinkLang extends Component {
     }
 }
 
-function mapstateToProps(state) {
+function mapStateToProps(state) {
     return {
         language: state.language
     }
@@ -37,9 +37,9 @@ function mapstateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onRU: () => dispatch({ type: 'RU' }),
-        onEN: () => dispatch({ type: 'EN' })
+        onRU: () => dispatch({type: 'RU'}),
+        onEN: () => dispatch({type: 'EN'})
     }
 }
 
-export default connect(mapstateToProps, mapDispatchToProps)(LinkLang)
+export default connect(mapStateToProps, mapDispatchToProps)(LinkLang)

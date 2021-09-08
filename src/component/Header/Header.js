@@ -1,8 +1,7 @@
-import { NavLink } from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import LinkLang from "../../containers/LinkLang/LinkLang"
 
-export const Header = ({ header }) => {
-
+export const Header = ({header}) => {
 
     return (
         <nav className="navbar navbar-dark bg-primary navbar-expand-lg">
@@ -17,7 +16,7 @@ export const Header = ({ header }) => {
                     })}
                 </ul>
             </div>
-            <LinkLang />
-        </nav >
+            <LinkLang/>
+        </nav>
     )
 }

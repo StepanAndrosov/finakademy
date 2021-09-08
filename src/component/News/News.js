@@ -1,11 +1,10 @@
-import { connect } from "react-redux"
-import { NewsCard } from "./NewsCard/NewsCard"
+import {connect} from "react-redux"
+import {NewsCard} from "./NewsCard/NewsCard"
 import style from './News.module.scss'
 
+const News = ({language, news}) => {
 
-const News = ({ language, news }) => {
-    let title
-    language === 'ru' ? title = 'Новости' : title = 'News'
+    const title = language === 'ru' ? 'Новости' : 'News'
 
     return (
         <div className={style.News + " card mb-3 mt-2"}>
@@ -14,7 +13,7 @@ const News = ({ language, news }) => {
                 {news.map((item, index) => {
                     return (
                         <div key={item.title} className="col-sm-4 pt-3">
-                            <NewsCard news={news[index]} />
+                            <NewsCard news={news[index]}/>
                         </div>)
                 })}
             </div>
@@ -22,10 +21,10 @@ const News = ({ language, news }) => {
     )
 }
 
-function mapstateToProps(state) {
+function mapStateToProps(state) {
     return {
         language: state.language
     }
 }
 
-export default connect(mapstateToProps)(News)
+export default connect(mapStateToProps)(News)

@@ -1,11 +1,10 @@
-import { connect } from "react-redux"
-import { ProductsCard } from "./ProductsCard/ProductsCard"
+import {connect} from "react-redux"
+import {ProductsCard} from "./ProductsCard/ProductsCard"
 import style from './Products.module.scss'
 
+const Products = ({language, products}) => {
 
-const Products = ({ language, products }) => {
-    let title
-    language === 'ru' ? title = 'Наши продукты' : title = 'Our products'
+    const title = language === 'ru' ? 'Наши продукты' : 'Our products'
 
     return (
         <div className={style.Products + " card mb-3 mt-2"}>
@@ -14,7 +13,7 @@ const Products = ({ language, products }) => {
                 {products.map((item, index) => {
                     return (
                         <div key={item.title} className="col-sm-4 pt-3">
-                            <ProductsCard products={products[index]} />
+                            <ProductsCard products={products[index]}/>
                         </div>)
                 })}
             </div>
@@ -22,10 +21,10 @@ const Products = ({ language, products }) => {
     )
 }
 
-function mapstateToProps(state) {
+function mapStateToProps(state) {
     return {
         language: state.language
     }
 }
 
-export default connect(mapstateToProps)(Products)
+export default connect(mapStateToProps)(Products)

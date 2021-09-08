@@ -1,6 +1,6 @@
 import style from './Title.module.scss'
 
-export const Title = ({ title }) => {
+export const Title = ({title}) => {
 
     return (
         <div className="card">

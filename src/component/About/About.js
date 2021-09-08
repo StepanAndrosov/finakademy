@@ -1,22 +1,12 @@
 import styles from './About.module.scss'
+import {delSpace} from "../../utils/delSpace";
 
-export const About = ({ about }) => {
+export const About = ({about}) => {
 
-    let principles = about.principles.description
-    let newprin = principles.replace(/<\/?[^>]+(>|$)/g, " ")
-    let arr = newprin.split('  ');
-
-    function delSpace(arr) {
-        let newArr = []
-        arr.forEach(element => {
-            if (element !== "") {
-                newArr.push(element)
-            }
-        });
-        return newArr
-    }
-    let newArr = delSpace(arr)
-
+    const principles = about.principles.description
+    const noTag = principles.replace(/<\/?[^>]+(>|$)/g, " ")
+    const arr = noTag.split('  ');
+    const newArr = delSpace(arr)
 
     return (
         <div className={styles.About + " row"}>
@@ -33,7 +23,8 @@ export const About = ({ about }) => {
                     <div className="card-body">
                         <h3 className="card-title bg-dark p-1">{about.principles.title}</h3>
                         <div className="card-text">
-                            <ul className="list-group ">{newArr.map((item, index) => <li className="list-group-item bg-secondary" key={item + index}>{item}</li>)}</ul>
+                            <ul className="list-group ">{newArr.map((item, index) => <li
+                                className="list-group-item bg-secondary" key={item + index}>{item}</li>)}</ul>
                         </div>
                     </div>
                 </div>
